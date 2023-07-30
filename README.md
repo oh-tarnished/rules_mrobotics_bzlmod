@@ -18,8 +18,8 @@ See https://docs.bazel.build/versions/main/skylark/deploying.html#readme
 
 Ready to get started? Copy this repo, then
 
-1. search for "rules_mrobotics" and replace with the name you'll use for your workspace
-1. search for "machanirobotics" and replace with GitHub org
+1. search for "rules_mrobotics_bzlmod" and replace with the name you'll use for your workspace
+1. search for "oh-tarnished" and replace with GitHub org
 1. search for "mylang" and replace with the language/tool your rules are for
 1. rename directory "mylang" similarly
 1. run `pre-commit install` to get lints (see CONTRIBUTING.md)
@@ -35,15 +35,15 @@ Ready to get started? Copy this repo, then
 ## Installation
 
 From the release you wish to use:
-<https://github.com/machanirobotics/rules_mrobotics/releases>
+<https://github.com/oh-tarnished/rules_mrobotics_bzlmod/releases>
 copy the WORKSPACE snippet into your `WORKSPACE` file.
 
 To use a commit rather than a release, you can point at any SHA of the repo.
 
 For example to use commit `abc123`:
 
-1. Replace `url = "https://github.com/machanirobotics/rules_mrobotics/releases/download/v0.1.0/rules_mrobotics-v0.1.0.tar.gz"` with a GitHub-provided source archive like `url = "https://github.com/machanirobotics/rules_mrobotics/archive/abc123.tar.gz"`
-1. Replace `strip_prefix = "rules_mrobotics-0.1.0"` with `strip_prefix = "rules_mrobotics-abc123"`
+1. Replace `url = "https://github.com/oh-tarnished/rules_mrobotics_bzlmod/releases/download/v0.1.0/rules_mrobotics_bzlmod-v0.1.0.tar.gz"` with a GitHub-provided source archive like `url = "https://github.com/oh-tarnished/rules_mrobotics_bzlmod/archive/abc123.tar.gz"`
+1. Replace `strip_prefix = "rules_mrobotics_bzlmod-0.1.0"` with `strip_prefix = "rules_mrobotics_bzlmod-abc123"`
 1. Update the `sha256`. The easiest way to do this is to comment out the line, then Bazel will
    print a message with the correct value. Note that GitHub source archives don't have a strong
    guarantee on the sha256 stability, see

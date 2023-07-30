@@ -1,7 +1,7 @@
 {
-  "homepage": "https://github.com/machanirobotics/rules_mrobotics",
+  "homepage": "https://github.com/oh-tarnished/rules_mrobotics_bzlmod",
   "maintainers": [],
-  "repository": ["github:machanirobotics/rules_mrobotics"],
+  "repository": ["github:oh-tarnished/rules_mrobotics_bzlmod"],
   "versions": [],
   "yanked_versions": {}
 }

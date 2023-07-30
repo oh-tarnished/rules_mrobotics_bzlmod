@@ -6,8 +6,8 @@ set -o errexit -o nounset -o pipefail
 # https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables
 TAG=${GITHUB_REF_NAME}
 # The prefix is chosen to match what GitHub generates for source archives
-PREFIX="rules_mrobotics-${TAG:1}"
-ARCHIVE="rules_mrobotics-$TAG.tar.gz"
+PREFIX="rules_mrobotics_bzlmod-${TAG:1}"
+ARCHIVE="rules_mrobotics_bzlmod-$TAG.tar.gz"
 git archive --format=tar --prefix=${PREFIX}/ ${TAG} | gzip > $ARCHIVE
 SHA=$(shasum -a 256 $ARCHIVE | awk '{print $1}')
 
@@ -18,7 +18,7 @@ cat << EOF
 2. Add to your \`MODULE.bazel\` file:
 
 \`\`\`starlark
-bazel_dep(name = "rules_mrobotics", version = "${TAG:1}")
+bazel_dep(name = "rules_mrobotics_bzlmod", version = "${TAG:1}")
 \`\`\`
 
 ## Using WORKSPACE
@@ -28,10 +28,10 @@ Paste this snippet into your `WORKSPACE.bazel` file:
 \`\`\`starlark
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 http_archive(
-    name = "rules_mrobotics",
+    name = "rules_mrobotics_bzlmod",
     sha256 = "${SHA}",
     strip_prefix = "${PREFIX}",
-    url = "https://github.com/machanirobotics/rules_mrobotics/releases/download/${TAG}/${ARCHIVE}",
+    url = "https://github.com/oh-tarnished/rules_mrobotics_bzlmod/releases/download/${TAG}/${ARCHIVE}",
 )
 EOF
 
